@@ -74,28 +74,28 @@ function enableEndTurnBtn() {
   $("#end-turn").prop('disabled', false);
 }
 
-function updateBackground(url) {
-  $("body").css({"background": "url('./images/" + url + "')", "background-size": "100% 100%"});
-}
+// function updateBackground(url) {
+//   $("body").css({"background": "url('./images/" + url + "')", "background-size": "100% 100%"});
+// }
 
 function rolledOne() {
   switchCurrentPlayer();
   setMessage("Oh no! You rolled a 1, you lose your current points and end your turn. You're up, " + currentPlayer.name + "!");
   disableEndTurnBtn();
-  setRandomFailBackground();
+  // setRandomFailBackground();
   $("#dice-image").effect("shake", {times: 8}, 800);
 }
 
-function setRandomFailBackground() {
-  var failImages = ["fail1.gif",
-                    "fail2.gif",
-                    "fail3.gif",
-                    "fail4.gif",
-                    "fail5.gif",
-                    "fail6.gif"];
+// function setRandomFailBackground() {
+//   var failImages = ["fail1.gif",
+//                     "fail2.gif",
+//                     "fail3.gif",
+//                     "fail4.gif",
+//                     "fail5.gif",
+//                     "fail6.gif"];
 
-  updateBackground(failImages[Math.floor(Math.random() * failImages.length)]);
-}
+//   updateBackground(failImages[Math.floor(Math.random() * failImages.length)]);
+// }
 
 $(function() {
   disableEndTurnBtn();
@@ -127,7 +127,7 @@ $(function() {
   });
 
   $("#roll-dice").click(function() {
-    updateBackground("");
+    // updateBackground("");
     clearMessage();
     enableEndTurnBtn();
 
@@ -170,7 +170,7 @@ $(function() {
       setMessage("Congratulations " + currentPlayer.name + "! You win!");
       $("#message").append("<span class='clear-scores linkify'> Click here to play again!</span>");
 
-      updateBackground("success1.gif");
+      // updateBackground("success1.gif");
 
       $(".clear-scores").click(function() {
         resetGame();
